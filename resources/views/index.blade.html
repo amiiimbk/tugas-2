@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleGirl - Fashion Wanita</title>
+    <!-- Framework Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Header & Navigasi -->
+    <nav class="navbar navbar-expand-lg custom-navbar fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-brand fs-3" href="#" onclick="tampilBeranda()">StyleGirl</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link fw-bold text-dark nav-pointer" onclick="tampilBeranda()">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-dark nav-pointer" onclick="tampilKatalog()">Katalog Produk</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-dark nav-pointer" onclick="tampilTentang()">Tentang Kami</a></li>
+                    <!-- Tambahan Menu Keranjang -->
+                    <li class="nav-item"><a class="nav-link fw-bold text-dark nav-pointer" onclick="tampilKeranjang()">🛒 Keranjang (<span id="jumlah-keranjang" class="text-danger">0</span>)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer untuk Fixed Navbar -->
+    <div style="padding-top: 76px;"></div>
+
+    <!-- HALAMAN 1: BERANDA -->
+    <div id="beranda-page">
+        <section class="hero-section py-5">
+            <div class="container text-center py-5">
+                <h2 class="display-4 fw-bold text-dark">Pancarkan Pesona Anggunmu</h2>
+                <p class="lead text-secondary mb-4">Eksplorasi koleksi pakaian wanita premium dengan warna pastel yang lembut.</p>
+                <button class="btn btn-brand btn-lg rounded-pill px-4" onclick="tampilKatalog()">Lihat Katalog Lengkap</button>
+            </div>
+        </section>
+
+        <section class="container py-5">
+            <h2 class="text-center text-brand fw-bold mb-5">Produk Unggulan Kami</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 product-card">
+                        <img src="assets/images/Mermaid Hem_Maxi_Dress.jpeg" class="card-img-top product-img" alt="Mermaid Hem Maxi Dress">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Mermaid Hem Maxi Dress</h5>
+                            <p class="card-text text-muted mb-2">Rp 550.000 <br>⭐ 5.0/5</p>
+                            <button class="btn w-100 btn-lihat" onclick="bukaDetail('Mermaid Hem Maxi Dress', 550000, 'Gaun elegan dengan potongan mermaid di bagian bawah.', 'assets/images/Mermaid Hem_Maxi_Dress.jpeg')">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 product-card">
+                        <img src="assets/images/dress2.jpeg" class="card-img-top product-img" alt="Elegant pink floral bodycon dress">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Elegant pink floral bodycon dress</h5>
+                            <p class="card-text text-muted mb-2">Rp 350.000 <br>⭐ 4.8/5</p>
+                            <button class="btn w-100 btn-lihat" onclick="bukaDetail('Elegant pink floral bodycon dress', 350000, 'Gaun motif floral bernuansa pink yang manis.', 'assets/images/dress2.jpeg')">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 product-card">
+                        <img src="assets/images/dress6.jpeg" class="card-img-top product-img" alt="Chic Black Bodycon Maxi Dress">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Chic Black Bodycon Maxi Dress</h5>
+                            <p class="card-text text-muted mb-2">Rp 599.000 <br>⭐ 5.0/5</p>
+                            <button class="btn w-100 btn-lihat" onclick="bukaDetail('Chic Black Bodycon Maxi Dress', 599000, 'Gaun maxi bodycon berwarna hitam pekat.', 'assets/images/dress6.jpeg')">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- HALAMAN 2: KATALOG LENGKAP -->
+    <div id="katalog-page" style="display: none;">
+        <section class="container py-5">
+            <h2 class="text-center text-brand fw-bold mb-5">Katalog Lengkap Pakaian</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 product-card">
+                        <img src="assets/images/Mermaid Hem_Maxi_Dress.jpeg" class="card-img-top product-img" alt="Mermaid Hem Maxi Dress">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Mermaid Hem Maxi Dress</h5>
+                            <p class="card-text text-muted mb-2">Rp 550.000 <br>⭐ 5.0/5</p>
+                            <button class="btn w-100 btn-lihat" onclick="bukaDetail('Mermaid Hem Maxi Dress', 550000, 'Gaun elegan dengan potongan mermaid di bagian bawah.', 'assets/images/Mermaid Hem_Maxi_Dress.jpeg')">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 product-card">
+                        <img src="assets/images/dress2.jpeg" class="card-img-top product-img" alt="Elegant pink floral bodycon dress">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Elegant pink floral bodycon dress</h5>
+                            <p class="card-text text-muted mb-2">Rp 350.000 <br>⭐ 4.8/5</p>
+                            <button class="btn w-100 btn-lihat" onclick="bukaDetail('Elegant pink floral bodycon dress', 350000, 'Gaun motif floral bernuansa pink yang manis.', 'assets/images/dress2.jpeg')">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 product-card">
+                        <img src="assets/images/dress3.jpeg" class="card-img-top product-img" alt="Ruffle Dress">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Ruffle Dress</h5>
+                            <p class="card-text text-muted mb-2">Rp 400.000 <br>⭐ 4.9/5</p>
+                            <button class="btn w-100 btn-lihat" onclick="bukaDetail('Ruffle Dress', 400000, 'Dress kasual dengan aksen lipatan ruffle.', 'assets/images/dress3.jpeg')">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 product-card">
+                        <img src="assets/images/dress4.jpeg" class="card-img-top product-img" alt="Black Ribbed Knit Dress">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Black Ribbed Knit Dress</h5>
+                            <p class="card-text text-muted mb-2">Rp 500.000 <br>⭐ 4.7/5</p>
+                            <button class="btn w-100 btn-lihat" onclick="bukaDetail('Black Ribbed Knit Dress', 500000, 'Gaun rajut hitam bertekstur ribbed.', 'assets/images/dress4.jpeg')">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 product-card">
+                        <img src="assets/images/dress5.jpeg" class="card-img-top product-img" alt="Girlism Vestido Long">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Girlism Vestido Long</h5>
+                            <p class="card-text text-muted mb-2">Rp 370.000 <br>⭐ 4.8/5</p>
+                            <button class="btn w-100 btn-lihat" onclick="bukaDetail('Girlism Vestido Long', 370000, 'Long dress santai berbahan jatuh.', 'assets/images/dress5.jpeg')">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 product-card">
+                        <img src="assets/images/dress6.jpeg" class="card-img-top product-img" alt="Chic Black Bodycon Maxi Dress">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Chic Black Bodycon Maxi Dress</h5>
+                            <p class="card-text text-muted mb-2">Rp 599.000 <br>⭐ 5.0/5</p>
+                            <button class="btn w-100 btn-lihat" onclick="bukaDetail('Chic Black Bodycon Maxi Dress', 599000, 'Gaun maxi bodycon berwarna hitam pekat.', 'assets/images/dress6.jpeg')">Lihat Detail</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- HALAMAN 3: DETAIL PRODUK -->
+    <div id="detail-page" style="display: none;">
+        <section class="container py-5">
+            <button class="btn btn-link text-decoration-none text-brand fw-bold mb-4 px-0" onclick="tampilKatalog()">← Kembali ke Katalog</button>
+            <div class="card shadow-sm border-0 p-4 rounded-4">
+                <div class="row g-5 align-items-center">
+                    <div class="col-md-5">
+                        <img id="detail-img" src="" class="img-fluid rounded-4 w-100" alt="Detail Produk">
+                    </div>
+                    <div class="col-md-7">
+                        <h2 id="detail-nama" class="fw-bold text-dark">Nama Produk</h2>
+                        <h3 id="detail-harga" class="text-brand fw-bold mb-3">Rp 0</h3>
+                        <p id="detail-deskripsi" class="text-muted">Deskripsi produk.</p>
+                        <hr class="my-4">
+                        <div class="mb-3">
+                            <label for="detail-warna" class="form-label fw-bold">Pilih Varian Warna:</label>
+                            <select class="form-select" id="detail-warna">
+                                <option value="Sesuai Foto">Sesuai Foto (Default)</option>
+                                <option value="Pastel Pink">Pastel Pink</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="detail-ukuran" class="form-label fw-bold">Pilih Ukuran (Size):</label>
+                            <select class="form-select" id="detail-ukuran">
+                                <option value="S">Small (S)</option>
+                                <option value="M">Medium (M)</option>
+                                <option value="L">Large (L)</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="detail-qty" class="form-label fw-bold">Jumlah (Quantity):</label>
+                            <input type="number" class="form-control" id="detail-qty" value="1" min="1">
+                        </div>
+                        <!-- Tombol diubah ke logika keranjang -->
+                        <button class="btn btn-brand btn-lg w-100 fw-bold rounded-3" onclick="tambahKeKeranjang()">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- HALAMAN 4: TENTANG KAMI -->
+    <div id="tentang-page" style="display: none;">
+        <section class="container py-5">
+            <h2 class="text-center text-brand fw-bold mb-5">Tentang StyleGirl</h2>
+            <div class="row g-5 align-items-center">
+                <div class="col-md-6">
+                    <!-- Gunakan foto lokal tanpa hotlinking -->
+                    <img src="assets/images/tentang-stylegirl.png" class="img-fluid rounded-4 shadow-sm w-100" alt="Tentang StyleGirl" onerror="this.src='assets/images/default.jpg'">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="fw-bold text-dark mb-3">Gaya Pastel untuk Wanita Modern</h3>
+                    <p class="text-muted" style="line-height: 1.8;">StyleGirl adalah brand fashion lokal yang berfokus pada pakaian wanita dengan nuansa warna pastel yang lembut, feminim, dan elegan. Kami berkomitmen memberikan kualitas bahan terbaik agar Anda selalu tampil percaya diri setiap saat.</p>
+                    <div class="p-4 rounded-4 mt-4 custom-navbar">
+                        <h5 class="fw-bold text-dark mb-3">Hubungi Kami:</h5>
+                        <p class="mb-1"><strong>WhatsApp:</strong> 0857-7344-7091</p>
+                        <p class="mb-0"><strong>Jam Operasional:</strong> Senin - Sabtu (08.00 - 17.00 WIB)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- HALAMAN 5: KERANJANG BELANJA -->
+    <div id="keranjang-page" style="display: none;">
+        <section class="container py-5">
+            <h2 class="text-center text-brand fw-bold mb-5">Keranjang Belanja</h2>
+            <div class="card shadow-sm border-0 p-4 rounded-4">
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Produk</th>
+                                <th>Varian</th>
+                                <th>Harga</th>
+                                <th>Jumlah</th>
+                                <th>Total</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="isi-keranjang">
+                            <!-- Data keranjang akan masuk ke sini via JS -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                    <h4 class="fw-bold text-dark mb-0">Total Belanja: <span id="total-belanja" class="text-brand">Rp 0</span></h4>
+                    <button class="btn btn-success btn-lg fw-bold px-5 rounded-3" onclick="checkoutWA()">Checkout via WhatsApp</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="custom-navbar text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-1 fw-bold text-dark">&copy; 2026 StyleGirl</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS & Custom Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

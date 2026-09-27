@@ -1,0 +1,1 @@
+<img src="{{ asset('assets/images/tentang-stylegirl.png') }}" alt="StyleGirl Logo" style="height: 40px;">

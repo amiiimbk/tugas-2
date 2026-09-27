@@ -1,0 +1,63 @@
+/* Definisi Warna Pastel Custom */
+:root {
+    --pastel-pink: #ffe4e1;
+    --pastel-rose: #ffb6c1;
+    --pastel-blue: #b0e0e6;
+    --text-brand: #d06c84;
+}
+
+/* Background dan Navbar */
+body {
+    background-color: #fffafa !important;
+}
+.custom-navbar {
+    background-color: var(--pastel-pink);
+}
+.nav-pointer {
+    cursor: pointer;
+}
+
+/* Tipografi dan Tombol Custom */
+.text-brand {
+    color: var(--text-brand) !important;
+}
+.btn-brand {
+    background-color: var(--text-brand);
+    color: white;
+    border: none;
+}
+.btn-brand:hover {
+    background-color: #b55a70;
+    color: white;
+}
+.btn-lihat {
+    background-color: var(--pastel-rose);
+    color: #333;
+    font-weight: bold;
+    border: none;
+}
+.btn-lihat:hover {
+    background-color: #ff9fb0;
+    color: white;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-blue));
+    border-bottom: 3px solid white;
+}
+
+/* Styling Gambar dan Kartu */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+.product-img {
+    height: 350px;
+    object-fit: cover;
+    border-top-left-radius: 0.375rem;
+    border-top-right-radius: 0.375rem;
+}

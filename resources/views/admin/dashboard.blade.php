@@ -16,7 +16,8 @@
             <span class="navbar-brand fw-bold text-brand fs-3">StyleGirl - Admin Panel</span>
             <div class="d-flex align-items-center gap-3">
                 <span class="text-muted">Halo, Mutiara (Admin)</span>
-                <a href="{{ url('/') }}" class="btn btn-outline-dark btn-sm rounded-pill px-3">Lihat Website</a>
+                <!-- Tombol kembali ke Beranda Utama -->
+                <a href="{{ url('/') }}" class="btn btn-brand text-white btn-sm rounded-pill px-3 fw-bold">← Kembali ke Website</a>
             </div>
         </div>
     </nav>

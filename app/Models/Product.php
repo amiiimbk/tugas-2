@@ -9,11 +9,13 @@ class Product extends Model
 {
     use HasFactory;
 
-    // Mengizinkan kolom ini diisi secara massal dari form
     protected $fillable = [
-        'nama_produk',
-        'deskripsi',
+        'nama',
         'harga',
-        'stok'
+        'stok',       
+        'ukuran',
+        'rating',
+        'deskripsi',
+        'gambar'
     ];
 }

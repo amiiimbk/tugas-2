@@ -37,6 +37,16 @@
                                 Halo, {{ Auth::user()->name }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
+                                <!-- Tombol Pintasan Admin (Hanya muncul untuk mutiaramarsella6@gmail.com) -->
+                                @if(Auth::user()->email === 'mutiaramarsella6@gmail.com')
+                                    <li>
+                                        <a class="dropdown-item fw-bold text-primary" href="{{ route('admin.dashboard') }}">
+                                            ⚙️ Halaman Admin
+                                        </a>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                @endif
+
                                 <li>
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
